@@ -195,6 +195,7 @@
 		808302432 811656384>;
 	qcom,mdss-dsi-pan-enable-dynamic-fps;
 	qcom,mdss-dsi-pan-fps-update = "dfps_immediate_porch_mode_vfp";
+	qcom,mdss-dsi-traffic-mode = "non_burst_sync_pulse";
 };
 
 &dsi_nt36672a_e7t_shenchao_fhdplus_video {
@@ -210,6 +211,7 @@
 		808302432 811656384>;
 	qcom,mdss-dsi-pan-enable-dynamic-fps;
 	qcom,mdss-dsi-pan-fps-update = "dfps_immediate_porch_mode_vfp";
+	qcom,mdss-dsi-traffic-mode = "non_burst_sync_pulse";
 };
 
 &dsi_ft8719_e7t_boe_fhdplus_video {
@@ -225,6 +227,7 @@
 		808302432 811656384>;
 	qcom,mdss-dsi-pan-enable-dynamic-fps;
 	qcom,mdss-dsi-pan-fps-update = "dfps_immediate_porch_mode_vfp";
+	qcom,mdss-dsi-traffic-mode = "non_burst_sync_pulse";
 };
 
 &dsi_dual_sharp_video {
