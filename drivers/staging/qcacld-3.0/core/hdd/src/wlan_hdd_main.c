@@ -380,6 +380,7 @@ int hdd_validate_channel_and_bandwidth(hdd_adapter_t *adapter,
 	return 0;
 }
 
+#ifdef MODULE
 /**
  * hdd_wait_for_recovery_completion() - Wait for cds recovery completion
  *
@@ -419,7 +420,7 @@ static bool hdd_wait_for_recovery_completion(void)
 	hdd_info("Recovery completed successfully!");
 	return true;
 }
-
+#endif
 
 static int __hdd_netdev_notifier_call(struct notifier_block *nb,
 				    unsigned long state, void *data)
@@ -12493,6 +12494,7 @@ dev_alloc_err:
 	return -ENODEV;
 }
 
+#ifdef MODULE
 static void wlan_hdd_state_ctrl_param_destroy(void)
 {
 	cdev_del(&wlan_hdd_state_cdev);
@@ -12502,6 +12504,7 @@ static void wlan_hdd_state_ctrl_param_destroy(void)
 
 	pr_info("Device node unregistered");
 }
+#endif
 
 /**
  * __hdd_module_init - Module init helper
@@ -12556,28 +12559,6 @@ err_hdd_init:
 }
 
 #ifdef MODULE
-/**
- * hdd_wait_for_recovery_completion() - Wait for cds recovery completion
- *
- * Block the unloading of the driver until the cds recovery is completed
- *
- * Return: None
- */
-static void hdd_wait_for_recovery_completion(void)
-{
-	int retry = 0;
-
-	/* Wait for recovery to complete */
-	while (cds_is_driver_recovering()) {
-		hdd_err("Recovery in progress; wait here!!!");
-		msleep(1000);
-		if (retry++ == HDD_MOD_EXIT_SSR_MAX_RETRIES) {
-			hdd_err("SSR never completed, error");
-			QDF_BUG(0);
-		}
-	}
-}
-
 /**
  * __hdd_module_exit - Module exit helper
  *
