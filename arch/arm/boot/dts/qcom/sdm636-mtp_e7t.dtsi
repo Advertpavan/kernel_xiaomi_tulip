@@ -20,10 +20,6 @@
 	hw-config = "single_dsi";
 };
 
-&mdss_dsi0 {
-	qcom,dsi-pref-prim-pan = <&dsi_nt36672a_e7t_tianma_fhdplus_video>;
-};
-
 &mdss_dsi1 {
 	status = "disabled";
 };
