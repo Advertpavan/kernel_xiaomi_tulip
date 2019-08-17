@@ -137,6 +137,48 @@ const struct ath10k_hw_regs qca4019_regs = {
 	.pcie_intr_ce_mask_all                  = 0x000fff00,
 	.pcie_intr_clr_address                  = 0x00000010,
 };
+const struct ath10k_hw_values qca988x_values = {
+	.rtc_state_val_on		= 3,
+	.ce_count			= 8,
+	.msi_assign_ce_max		= 7,
+	.num_target_ce_config_wlan	= 7,
+	.ce_desc_meta_data_mask		= 0xFFFC,
+	.ce_desc_meta_data_lsb		= 2,
+};
+
+const struct ath10k_hw_values qca6174_values = {
+	.rtc_state_val_on		= 3,
+	.ce_count			= 8,
+	.msi_assign_ce_max		= 7,
+	.num_target_ce_config_wlan	= 7,
+	.ce_desc_meta_data_mask		= 0xFFFC,
+	.ce_desc_meta_data_lsb		= 2,
+};
+
+const struct ath10k_hw_values qca99x0_values = {
+	.rtc_state_val_on		= 7,
+	.ce_count			= 12,
+	.msi_assign_ce_max		= 12,
+	.num_target_ce_config_wlan	= 10,
+	.ce_desc_meta_data_mask		= 0xFFF0,
+	.ce_desc_meta_data_lsb		= 4,
+};
+
+const struct ath10k_hw_values qca9888_values = {
+	.rtc_state_val_on		= 3,
+	.ce_count			= 12,
+	.msi_assign_ce_max		= 12,
+	.num_target_ce_config_wlan	= 10,
+	.ce_desc_meta_data_mask		= 0xFFF0,
+	.ce_desc_meta_data_lsb		= 4,
+};
+
+const struct ath10k_hw_values qca4019_values = {
+	.ce_count                       = 12,
+	.num_target_ce_config_wlan      = 10,
+	.ce_desc_meta_data_mask         = 0xFFF0,
+	.ce_desc_meta_data_lsb          = 4,
+};
 
 const struct ath10k_hw_regs wcn3990_regs = {
 	.rtc_soc_base_address			= 0x00000000,
